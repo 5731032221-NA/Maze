@@ -7,22 +7,25 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
 import input.InputUtility;
+import render.BreathThread;
 import render.Resource;
+import render.StartScreen;
 
-public class Tank extends CollidableEntity {
+public class Player extends CollidableEntity {
 
 	private static final int speed = 24;
 	private int angle = 0; // angle 0 = EAST
 	private Field field;
 	private static int itemFire;
 	private int dimension;
+	private static BreathThread gThread = new BreathThread();
 
 	public static void collectItemFire() {
-		Tank.itemFire++;
+		Player.itemFire++;
 	}
 
 
-	public Tank(int x, int y,Field field) {
+	public Player(int x, int y,Field field) {
 		this.field = field;
 		this.x = x;
 		this.y = y;
@@ -62,10 +65,12 @@ public class Tank extends CollidableEntity {
 		g2d.drawImage(Resource.mineSprite.getSubimage(0, 0, 24, 24), null, x, y);
 		// Black light
 		float alpha = 0.025f;
-		itemFire = 0;
-		dimension = 12 + itemFire;
+		itemFire = 10;
+		dimension = 12 + itemFire*2;
+
 		for (int i = 2; i < 250 - (12 * itemFire); i++) {
 			alpha += 0.025f;
+
 			if (alpha >= 1.0f) {
 				alpha = 1.0f;
 			}

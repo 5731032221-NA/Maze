@@ -12,7 +12,7 @@ public class BreathThread implements Runnable {
 	private boolean running = false;
 	private static float breath = 0f;
 	private static int type =0;
-
+	
 	public synchronized void start() {
 		if (running)
 			return;
@@ -50,7 +50,6 @@ public class BreathThread implements Runnable {
 	}
 
 	public synchronized void draw(Graphics2D g) {
-		
 		g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, breath));
 	}
 	

@@ -13,7 +13,7 @@ public class Mine extends CollidableEntity{
 		this.radius = 20;
 	}
 	
-	public void onCollision(Tank tank){
+	public void onCollision(Player tank){
 		this.destroyed = true;
 	}
 	

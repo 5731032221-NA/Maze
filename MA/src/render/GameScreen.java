@@ -14,7 +14,7 @@ import logic.GameLogic;
 
 @SuppressWarnings("serial")
 public class GameScreen extends JComponent{
-	private GameLogic logic ;
+	private GameLogic logic ; 
 	public GameScreen(){
 		super();
 		logic = new GameLogic();

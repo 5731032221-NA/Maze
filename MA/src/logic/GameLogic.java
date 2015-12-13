@@ -4,13 +4,13 @@ import render.RenderableHolder;
 
 public class GameLogic {
 	
-	private Tank tank;
+	private Player tank;
 	private Mine mine;
 	
 	public GameLogic(){	
 		Field field = new Field();
 		RenderableHolder.getInstance().add(field);
-		tank = new Tank(456,0,field);
+		tank = new Player(456,0,field);
 		mine = new Mine(100,100);
 		RenderableHolder.getInstance().add(tank);
 		RenderableHolder.getInstance().add(mine);

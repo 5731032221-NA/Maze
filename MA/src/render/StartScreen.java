@@ -27,7 +27,7 @@ public class StartScreen extends JComponent {
 	private AudioClip opening;
 	private AudioClip start;
 	private boolean isStarted = false;
-	public BreathThread bThread;
+	public static BreathThread bThread;
 
 	public StartScreen() {
 		try {
